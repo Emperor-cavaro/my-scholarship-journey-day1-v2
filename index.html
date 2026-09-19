@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>John-Baptist - Robotics & Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.png">
+  <style>
+    body { font-family: Arial; padding: 0; background: #f4f4f4; margin:0; text-align:center; }
+    /* TOP NAV */
+    .navbar {
+      background: #034694; color: white; padding: 12px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top:0; z-index:100;
+    }
+    .navbar img { width: 45px; height:45px; border-radius:50%; border:2px solid #FFD700; }
+    .navbar h2 { margin:0; font-size:18px; color:#FFD700; }
+    .content { padding: 20px; }
+    h1, h2 { color: #034694; }
+    .profile-img { border-radius: 10px; border: 3px solid #034694; width: 280px; }
+    .flyer-img { width: 100%; max-width: 500px; border: 3px solid #FFA500; margin-top:10px; border-radius:10px; }
+    .section {
+      background: white; padding: 15px; margin: 20px auto;
+      border-radius: 8px; max-width: 600px; text-align: left;
+      word-wrap: break-word; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    input, textarea {
+      width: 90%; padding: 10px; margin: 8px 0;
+      border: 1px solid #ccc; border-radius: 5px; font-family: Arial;
+    }
+    textarea { height: 80px; }
+    .goal-btn {
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      color: #034694; padding: 14px 30px; border: none;
+      border-radius: 12px; font-weight: bold; font-size: 16px;
+      cursor: pointer; margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(3, 70, 148, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <img src="logo.png" alt="JB Logo">
+      <h2>JB ROBOTICS</h2>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; font-size:14px;">Ojo, Lagos</span>
+  </div>
+
+  <div class="content">
+    <h1>John-Baptist Chinuaogu Uzoigwe</h1>
+    <p><b>Aspiring Robotic Scientist | Digital Solutions</b></p>
+    
+    <button class="goal-btn" onclick="showGoal()">MY GOAL</button>
+    <br>
+    <img src="me.jpg" alt="John-Baptist" class="profile-img">
+
+    <div class="section">
+      <h2>About Me</h2>
+      <p>I want to become a robotic scientist, build skills, and create opportunities for Nigeria. I also help businesses bring ideas to life with websites, graphics, and video.</p>
+    </div>
+
+    <div class="section">
+      <h2>Skills & Tools</h2>
+      <ul>
+        <li>Robotics: Arduino, C++</li>
+        <li>Programming: Python, HTML, CSS, JavaScript</li>
+        <li>Digital Services: Website Creation, Image & Video Editing (Canva Pro)</li>
+        <li>Problem Solving & Community Service</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+      <p><b>1. Goal:</b> Build humanoid robots that help my community.</p>
+      <p>Robot Control Dashboard - Coming Day 15</p>
+      <hr>
+      <p><b>2. Business:</b> John's Digital Solutions - Professional flyers & websites.</p>
+      <img src="flyer.jpg" alt="My Business Flyer" class="flyer-img">
+      <br><br>
+      <p><b>3. Brand:</b> JB Robotics & Digital - My official logo.</p>
+      <img src="logo.png" alt="JB Logo" style="width:200px; border:2px solid #034694; border-radius:50%;">
+    </div>
+
+    <div class="section">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mzzbdqop" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" style="background:#034694; color:white; padding:10px 20px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">Send Message</button>
+      </form>
+      <p><b>Email:</b> johnbaptistchinua@gmail.com</p>
+      <p><b>GitHub:</b> <a href="https://github.com/Emperor-cavaro" target="_blank">github.com/Emperor-cavaro</a></p>
+      <p><b>Location:</b> Ojo, Lagos, Nigeria</p>
+    </div>
+  </div>
+
+<script>
+function showGoal() {
+  alert('I want to build humanoid robots for Nigeria and study Robotics in Germany!');
+}
+</script>
+
+</body>
+</html>

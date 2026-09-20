@@ -1,5 +1,5 @@
 # JB ROBOTICS & DIGITAL - Live Company Website
-Founder: John-Baptist Chinuagoga Uzoigwe | Emperor Cavaro
+Founder: John-Baptist Chinuaogu Uzoigwe | Emperor Cavaro
 Location: Ojo, Lagos, Nigeria
 Live Link: https://emperor-cavaro.github.io/my-scholarship-journey-day1-v2/
 

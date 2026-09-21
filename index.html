@@ -23,8 +23,8 @@
     body {
       font-family: Arial, sans-serif;
       padding: 0;
-      background: #f4f4f4;
       margin: 0;
+      background: #f4f4f4;
       text-align: center;
       color: #222;
     }
@@ -108,74 +108,65 @@
     h1 {
       font-size: 28px;
       line-height: 1.3;
- 
-/* GOAL BUTTON */
+    }
 
-.goal-btn {
-  display: inline-block;
+    /* GOAL BUTTON */
 
-  background: linear-gradient(to right, #FFD700, #FFA500);
+    .goal-btn {
+      display: inline-block;
 
-  color: #0A1931;
+      background: linear-gradient(135deg, #FFD700, #FFA500);
 
-  padding: 12px 24px;
+      color: #0A1931;
 
-  border: none;
-  border-radius: 25px;
+      padding: 14px 28px;
 
-  font-weight: bold;
-  font-size: 16px;
+      border: 2px solid #034694;
+      border-radius: 30px;
 
-  cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
 
-  /* IMPROVED SPACING */
-  margin-top: 10px;
-  margin-bottom: 50px;
+      cursor: pointer;
 
-  box-shadow: 0 4px 10px rgba(3, 70, 148, 0.3);
+      /* SPACE BETWEEN BUTTON AND IMAGE */
+      margin-top: 15px;
+      margin-bottom: 70px;
 
-  transition: transform 0.2s ease,
-              box-shadow 0.2s ease;
-}
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 
-.goal-btn:hover {
-  transform: scale(1.05);
-
-  box-shadow: 0 6px 15px rgba(3, 70, 148, 0.4);
-}
-
-      /* SPACE BELOW BUTTON */
-
-      margin-top: 10px;
-      margin-bottom: 35px;
-
-      box-shadow: 0 4px 10px rgba(3, 70, 148, 0.3);
-
-      transition: transform 0.2s;
+      transition: transform 0.3s ease,
+                  box-shadow 0.3s ease;
     }
 
     .goal-btn:hover {
-      transform: scale(1.05);
+      transform: translateY(-4px);
+
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    .goal-btn:active {
+      transform: scale(0.96);
     }
 
     /* PROFILE IMAGE */
 
-.profile-img {
-  display: block;
+    .profile-img {
+      display: block;
 
-  width: 100%;
-  max-width: 280px;
-  height: auto;
+      width: 100%;
+      max-width: 280px;
+      height: auto;
 
-  margin: 0 auto 30px;
+      margin: 0 auto 30px;
 
-  border-radius: 10px;
-  border: 3px solid #034694;
+      border-radius: 10px;
+      border: 3px solid #034694;
 
-  object-fit: cover;
+      object-fit: cover;
 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
 
     /* SECTIONS */
 
@@ -192,7 +183,7 @@
 
       text-align: left;
 
-      word-wrap: break-word;
+      overflow-wrap: break-word;
 
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
@@ -236,6 +227,50 @@
       border-radius: 50%;
     }
 
+    /* SERVICES SECTION */
+
+    .services-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .service-card {
+      background: #f4f4f4;
+
+      border: 2px solid #034694;
+      border-radius: 10px;
+
+      padding: 20px;
+
+      width: 180px;
+
+      text-align: center;
+
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      transition: transform 0.3s ease,
+                  box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card h3 {
+      color: #034694;
+      font-size: 18px;
+    }
+
+    .service-card p {
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
     /* CONTACT FORM */
 
     input,
@@ -251,6 +286,12 @@
 
       font-family: Arial, sans-serif;
       font-size: 15px;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: 2px solid #034694;
+      border-color: #034694;
     }
 
     textarea {
@@ -271,6 +312,8 @@
       font-weight: bold;
 
       cursor: pointer;
+
+      transition: background 0.3s ease;
     }
 
     .submit-btn:hover {
@@ -312,6 +355,10 @@
         font-size: 23px;
       }
 
+      .goal-btn {
+        margin-bottom: 55px;
+      }
+
       .section {
         padding: 16px;
       }
@@ -324,43 +371,14 @@
         font-size: 12px;
       }
 
+      .service-card {
+        width: 100%;
+        max-width: 280px;
+      }
+
     }
 
- /* SERVICES SECTION */
-
-.services-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.service-card {
-  background: #f4f4f4;
-  border: 2px solid #034694;
-  border-radius: 10px;
-  padding: 20px;
-  width: 180px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-}
-
-.service-card h3 {
-  color: #034694;
-  font-size: 18px;
-}
-
-.service-card p {
-  line-height: 1.5;
-  font-size: 14px;
-}
- </style>
+  </style>
 
 </head>
 
@@ -390,6 +408,8 @@
     <a href="#about">About</a>
 
     <a href="#skills">Skills</a>
+
+    <a href="#services">Services</a>
 
     <a href="#projects">Projects</a>
 
@@ -478,65 +498,63 @@
 
     <!-- SERVICES SECTION -->
 
-<div class="section" id="services">
+    <div class="section" id="services">
 
-  <h2>My Services</h2>
+      <h2>My Services</h2>
 
-  <div class="services-container">
+      <div class="services-container">
 
-    <!-- SERVICE 1 -->
+        <!-- SERVICE 1 -->
 
-    <div class="service-card">
+        <div class="service-card">
 
-      <h3>🖥️ Website Creation</h3>
+          <h3>🖥️ Website Creation</h3>
 
-      <p>
-        I create simple and professional
-        websites for businesses and individuals.
-      </p>
+          <p>
+            I create simple and professional
+            websites for businesses and individuals.
+          </p>
+
+        </div>
+
+
+        <!-- SERVICE 2 -->
+
+        <div class="service-card">
+
+          <h3>🎨 Graphic Design</h3>
+
+          <p>
+            I design flyers, logos, and
+            advertisements using Canva.
+          </p>
+
+        </div>
+
+
+        <!-- SERVICE 3 -->
+
+        <div class="service-card">
+
+          <h3>🎬 Video Editing</h3>
+
+          <p>
+            I create promotional videos
+            for businesses and individuals.
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
 
-    <!-- SERVICE 2 -->
-
-    <div class="service-card">
-
-      <h3>🎨 Graphic Design</h3>
-
-      <p>
-        I design flyers, logos, and
-        advertisements using Canva.
-      </p>
-
-    </div>
-
-
-    <!-- SERVICE 3 -->
-
-    <div class="service-card">
-
-      <h3>🎬 Video Editing</h3>
-
-      <p>
-        I create promotional videos
-        for businesses and individuals.
-      </p>
-
-    </div>
-
-  </div>
-
-</div>
-
-<a href="#services">Services</a>
-
-<!-- PROJECTS SECTION -->
+    <!-- PROJECTS SECTION -->
 
     <div class="section" id="projects">
 
       <h2>Projects</h2>
-
 
       <p>
         <b>1. Goal:</b>
@@ -547,9 +565,7 @@
         Robot Control Dashboard - Coming Day 15
       </p>
 
-
       <hr>
-
 
       <p>
         <b>2. Business:</b>
@@ -562,9 +578,7 @@
         alt="My Business Flyer"
         class="flyer-img">
 
-
       <br>
-
 
       <p>
         <b>3. Brand:</b>
@@ -587,35 +601,35 @@
       <h2>Contact Me</h2>
 
       <form
-  action="https://formspree.io/f/xaenedkq"
-  method="POST">
+        action="https://formspree.io/f/xaenedkq"
+        method="POST">
 
-  <input
-    type="text"
-    name="name"
-    placeholder="Your Name"
-    required>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required>
 
-  <input
-    type="email"
-    name="email"
-    placeholder="Your Email"
-    required>
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required>
 
-  <textarea
-    name="message"
-    placeholder="Your Message"
-    required></textarea>
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          required></textarea>
 
-  <button
-    type="submit"
-    class="submit-btn">
+        <button
+          type="submit"
+          class="submit-btn">
 
-    Send Message
+          Send Message
 
-  </button>
+        </button>
 
-</form>
+      </form>
 
 
       <p>

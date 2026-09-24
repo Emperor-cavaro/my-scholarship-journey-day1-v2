@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Robot Car Controller - JB Robotics</title>
+<title>Robot Car Transformer Controller - JB Robotics</title>
 <link rel="icon" href="logo.png"><link rel="stylesheet" href="style.css">
 <style>
 .controller-box{background:white; max-width:400px; margin:20px auto; padding:20px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,.15); text-align:center}
@@ -17,27 +17,32 @@
 <body>
 <div class="navbar"><div class="brand"><img src="logo.png"><h2>JB ROBOTICS</h2></div><span class="location"><a href="index.html" style="color:#FFD700; text-decoration:none;">← Home</a></span></div>
 <div class="controller-box">
-<h2 style="margin:0; color:#034694;">🤖 ROBOT CAR MODE</h2>
-<div class="status" id="statusRobot">STATUS: READY TO TRANSFORM</div>
+<h2 style="margin:0; color:#034694;">🤖 ROBOT CAR TRANSFORMER</h2>
+<div class="status" id="statusRobot">STATUS: CAR MODE</div>
 <div class="pad">
   <div></div><button class="ctrl-btn" onclick="robot('FORWARD')">⬆️</button><div></div>
   <button class="ctrl-btn" onclick="robot('LEFT')">⬅️</button><button class="ctrl-btn" onclick="robot('STOP')" style="background:#d00000;">⏹️</button><button class="ctrl-btn" onclick="robot('RIGHT')">➡️</button>
   <div></div><button class="ctrl-btn" onclick="robot('BACKWARD')">⬇️</button><div></div>
   <button class="ctrl-btn" onclick="robot('LIGHT')">💡 LIGHT</button><button class="ctrl-btn" onclick="robot('HORN')">📢 HORN</button><button class="ctrl-btn" onclick="robot('DANCE')">💃 DANCE</button>
-  <button class="ctrl-btn trans-btn" onclick="robot('TRANSFORM')">🔄 TRANSFORM TO FISH</button>
+  <button class="ctrl-btn trans-btn" onclick="robot('TRANSFORM')">🔄 TRANSFORM: CAR ↔ ROBOT</button>
 </div>
-<div class="log" id="logRobot">> Robot ready...<br></div>
-<a href="fish.html" class="hire-btn">Go to Fish Mode →</a>
+<div class="log" id="logRobot">> Robot Car ready...<br></div>
+<a href="index.html" class="hire-btn" style="margin-top:10px; background:#666;">Home</a>
 </div>
 <script>
+let isRobot = false;
 function robot(cmd){
- document.getElementById('statusRobot').innerText="STATUS: "+cmd;
+ let statusEl = document.getElementById('statusRobot');
  if(cmd=='TRANSFORM'){
-   document.getElementById('statusRobot').innerText="STATUS: TRANSFORMING...";
-   setTimeout(()=>{window.location.href='fish.html';},1200);
+   isRobot = !isRobot;
+   statusEl.innerText = isRobot ? "STATUS: ROBOT MODE" : "STATUS: CAR MODE";
+   document.getElementById('logRobot').innerHTML=`> ${new Date().toLocaleTimeString()} : TRANSFORMED TO ${isRobot ? 'ROBOT' : 'CAR'}<br>`+document.getElementById('logRobot').innerHTML;
+   if(navigator.vibrate) navigator.vibrate([100,50,100]);
+   return;
  }
+ statusEl.innerText="STATUS: "+cmd;
  document.getElementById('logRobot').innerHTML=`> ${new Date().toLocaleTimeString()} : ${cmd}<br>`+document.getElementById('logRobot').innerHTML;
- if(navigator.vibrate) navigator.vibrate(cmd=='TRANSFORM'?[100,50,100]:40);
+ if(navigator.vibrate) navigator.vibrate(40);
 }
 </script>
 </body>

@@ -1,0 +1,33 @@
+:root{
+  --blue:#034694; --dark:#0A1931;
+  --gold:#FFD700; --orange:#FFA500;
+  --bg:#f4f6f9; --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter, Arial, sans-serif; background:var(--bg); color:#222; line-height:1.6}
+.navbar{background:var(--blue); color:#fff; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000}
+.brand{display:flex; align-items:center; gap:10px}
+.brand img{width:42px; height:42px; border-radius:50%; border:2px solid var(--gold); object-fit:cover}
+.brand h2{font-size:18px; color:var(--gold)}
+.location{font-size:13px; color:var(--gold); font-weight:600}
+.nav-links{background:var(--dark); display:flex; justify-content:center; gap:22px; flex-wrap:wrap; padding:10px; position:sticky; top:62px; z-index:999}
+.nav-links a{color:#fff; text-decoration:none; font-weight:600; font-size:14px}
+.nav-links a:hover{color:var(--gold)}
+.content{max-width:900px; margin:0 auto; padding:30px 16px; text-align:center}
+h1{color:var(--blue); font-size:32px; margin:10px 0}
+.subtitle{font-weight:700; opacity:.7; margin-bottom:24px}
+.hero-area{display:flex; flex-direction:column; align-items:center; gap:28px; margin:30px 0}
+.goal-btn{background:linear-gradient(135deg,var(--gold),var(--orange)); color:var(--dark); padding:14px 32px; border:none; border-radius:999px; font-weight:800; font-size:16px; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,.18); transition:.25s}
+.goal-btn:hover{transform:translateY(-3px) scale(1.02)}
+.profile-img{width:100%; max-width:520px; border-radius:var(--radius); border:3px solid var(--blue)}
+.section{background:#fff; padding:24px; margin:24px auto; border-radius:var(--radius); text-align:left; box-shadow:0 4px 16px rgba(0,0,0,.06); scroll-margin-top:120px}
+.section h2{color:var(--blue); margin-bottom:10px}
+.services-container{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px; margin-top:16px}
+.service-card{background:var(--bg); border:1px solid #dde3ee; border-radius:12px; padding:20px; text-align:center; transition:.25s}
+.service-card:hover{transform:translateY(-6px); border-color:var(--blue)}
+.hire-btn,.submit-btn{display:inline-block; background:var(--blue); color:#fff; padding:10px 20px; border-radius:999px; text-decoration:none; font-weight:700; border:none; cursor:pointer; transition:.2s}
+.hire-btn:hover,.submit-btn:hover{background:var(--dark); transform:translateY(-2px)}
+input,textarea{width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #ccd6e6; font-size:15px}
+input:focus,textarea:focus{outline:none; border-color:var(--blue)}
+textarea{height:110px; resize:vertical}

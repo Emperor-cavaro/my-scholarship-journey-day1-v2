@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robot Car Controller - JB Robotics</title>
+<link rel="icon" href="logo.png"><link rel="stylesheet" href="style.css">
+<style>
+.controller-box{background:white; max-width:400px; margin:20px auto; padding:20px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,.15); text-align:center}
+.status{background:#0A1931; color:#FFD700; padding:10px; border-radius:10px; margin:12px 0; font-weight:bold; font-family:monospace}
+.pad{display:grid; grid-template-columns:80px 80px 80px; gap:12px; justify-content:center; margin:20px 0}
+.ctrl-btn{background:#034694; color:white; border:none; padding:18px; border-radius:12px; font-size:18px; font-weight:bold; cursor:pointer}
+.ctrl-btn:active{transform:scale(0.9); background:#FFA500}
+.trans-btn{background:linear-gradient(135deg,#FFD700,#FFA500); color:#0A1931; border:3px solid #034694; grid-column:1 / span 3; padding:16px; font-size:18px; font-weight:bold}
+.log{font-size:12px; text-align:left; background:#f4f4f4; padding:10px; border-radius:10px; height:110px; overflow:auto}
+</style>
+</head>
+<body>
+<div class="navbar"><div class="brand"><img src="logo.png"><h2>JB ROBOTICS</h2></div><span class="location"><a href="index.html" style="color:#FFD700; text-decoration:none;">← Home</a></span></div>
+<div class="controller-box">
+<h2 style="margin:0; color:#034694;">🤖 ROBOT CAR MODE</h2>
+<div class="status" id="statusRobot">STATUS: READY TO TRANSFORM</div>
+<div class="pad">
+  <div></div><button class="ctrl-btn" onclick="robot('FORWARD')">⬆️</button><div></div>
+  <button class="ctrl-btn" onclick="robot('LEFT')">⬅️</button><button class="ctrl-btn" onclick="robot('STOP')" style="background:#d00000;">⏹️</button><button class="ctrl-btn" onclick="robot('RIGHT')">➡️</button>
+  <div></div><button class="ctrl-btn" onclick="robot('BACKWARD')">⬇️</button><div></div>
+  <button class="ctrl-btn" onclick="robot('LIGHT')">💡 LIGHT</button><button class="ctrl-btn" onclick="robot('HORN')">📢 HORN</button><button class="ctrl-btn" onclick="robot('DANCE')">💃 DANCE</button>
+  <button class="ctrl-btn trans-btn" onclick="robot('TRANSFORM')">🔄 TRANSFORM TO FISH</button>
+</div>
+<div class="log" id="logRobot">> Robot ready...<br></div>
+<a href="fish.html" class="hire-btn">Go to Fish Mode →</a>
+</div>
+<script>
+function robot(cmd){
+ document.getElementById('statusRobot').innerText="STATUS: "+cmd;
+ if(cmd=='TRANSFORM'){
+   document.getElementById('statusRobot').innerText="STATUS: TRANSFORMING...";
+   setTimeout(()=>{window.location.href='fish.html';},1200);
+ }
+ document.getElementById('logRobot').innerHTML=`> ${new Date().toLocaleTimeString()} : ${cmd}<br>`+document.getElementById('logRobot').innerHTML;
+ if(navigator.vibrate) navigator.vibrate(cmd=='TRANSFORM'?[100,50,100]:40);
+}
+</script>
+</body>
+</html>

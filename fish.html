@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fish Controller - JB Robotics</title>
+<link rel="icon" href="logo.png"><link rel="stylesheet" href="style.css">
+<style>
+.controller-box{background:white; max-width:400px; margin:20px auto; padding:20px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,.15); text-align:center}
+.status{background:#0A1931; color:#FFD700; padding:10px; border-radius:10px; margin:12px 0; font-weight:bold; font-family:monospace}
+.pad{display:grid; grid-template-columns:80px 80px 80px; gap:12px; justify-content:center; margin:20px 0}
+.ctrl-btn{background:#034694; color:white; border:none; padding:18px; border-radius:12px; font-size:18px; font-weight:bold; cursor:pointer}
+.ctrl-btn:active{transform:scale(0.9); background:#FFA500}
+.water-btn{background:#00A8E8} .tail-btn{background:#FF6B00; grid-column:1 / span 3}
+.log{font-size:12px; text-align:left; background:#f4f4f4; padding:10px; border-radius:10px; height:110px; overflow:auto}
+</style>
+</head>
+<body>
+<div class="navbar"><div class="brand"><img src="logo.png"><h2>JB ROBOTICS</h2></div><span class="location"><a href="index.html" style="color:#FFD700; text-decoration:none;">← Home</a></span></div>
+<div class="controller-box">
+<h2 style="margin:0; color:#034694;">🐟 FISH MODE</h2>
+<div class="status" id="statusFish">STATUS: IN WATER</div>
+<div class="pad">
+  <div></div><button class="ctrl-btn" onclick="fish('FORWARD')">⬆️</button><div></div>
+  <button class="ctrl-btn" onclick="fish('LEFT')">⬅️</button><button class="ctrl-btn" onclick="fish('STOP')" style="background:#666;">⏹️</button><button class="ctrl-btn" onclick="fish('RIGHT')">➡️</button>
+  <div></div><button class="ctrl-btn" onclick="fish('BACK')">⬇️</button><div></div>
+  <button class="ctrl-btn water-btn" onclick="fish('DIVE')">🌊 DIVE</button><button class="ctrl-btn water-btn" onclick="fish('SURFACE')">💧 SURFACE</button><button class="ctrl-btn water-btn" onclick="fish('SPEED')">⚡ SPEED</button>
+  <button class="ctrl-btn tail-btn" onclick="fish('TAIL WAVE')">〰️ TAIL WAVE</button>
+</div>
+<div class="log" id="logFish">> Fish ready...<br></div>
+<a href="robot.html" class="hire-btn">Go to Robot Mode →</a>
+</div>
+<script>
+function fish(cmd){
+ document.getElementById('statusFish').innerText="STATUS: "+cmd;
+ document.getElementById('logFish').innerHTML=`> ${new Date().toLocaleTimeString()} : ${cmd}<br>`+document.getElementById('logFish').innerHTML;
+ if(navigator.vibrate) navigator.vibrate(40);
+}
+</script>
+</body>
+</html>
